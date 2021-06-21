@@ -1,0 +1,1208 @@
+.country-select{
+	position:relative;
+	display:inline-block
+}
+.country-select *{
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box
+}
+.country-select .hide{
+	display:none
+}
+.country-select .v-hide{
+	visibility:hidden
+}
+.country-select input,
+.country-select input[type=text]{
+	position:relative;
+	z-index:0;
+	margin-top:0 !important;
+	margin-bottom:0 !important;
+	padding-right:36px;
+	margin-right:0
+}
+.country-select .flag-dropdown{
+	position:absolute;
+	top:0;
+	bottom:0;
+	right:0;
+	padding:1px
+}
+.country-select .selected-flag{
+	z-index:1;
+	position:relative;
+	width:36px;
+	height:100%;
+	padding:0 0 0 8px
+}
+.country-select .selected-flag .flag{
+	position:absolute;
+	top:0;
+	bottom:0;
+	margin:auto
+}
+.country-select .selected-flag .arrow{
+	position:absolute;
+	top:50%;
+	margin-top:-2px;
+	right:6px;
+	width:0;
+	height:0;
+	border-left:3px solid transparent;
+	border-right:3px solid transparent;
+	border-top:4px solid #555
+}
+.country-select .selected-flag .arrow.up{
+	border-top:none;
+	border-bottom:4px solid #555
+}
+.country-select .country-list{
+	position:absolute;
+	z-index:2;
+	list-style:none;
+	text-align:left;
+	padding:0;
+	margin:0 0 0 -1px;
+	-webkit-box-shadow:1px 1px 4px rgba(0, 0, 0, 0.2);
+	box-shadow:1px 1px 4px rgba(0, 0, 0, 0.2);
+	background-color:white;
+	border:1px solid #ccc;
+	white-space:nowrap;
+	max-height:200px;
+	overflow-y:scroll
+}
+.country-select .country-list .flag{
+	display:inline-block;
+	width:40px
+}
+/*@media (max-width: 500px){
+	.country-select .country-list{
+		white-space:normal
+	}
+}*/
+.country-select .country-list .divider{
+	padding-bottom:5px;
+	margin-bottom:5px;
+	border-bottom:1px solid #ccc
+}
+.country-select .country-list .country{
+	padding:5px 10px
+}
+.country-select .country-list .country.highlight{
+	background-color:rgba(0, 0, 0, 0.05)
+}
+.country-select .country-list .flag,
+.country-select .country-list .country-name{
+	vertical-align:middle
+}
+.country-select .country-list .flag{
+	margin-right:6px
+}
+.country-select.inside input,
+.country-select.inside input[type=text]{
+	padding-right:6px;
+	padding-left:52px;
+	margin-left:0
+}
+.country-select.inside .flag-dropdown{
+	right:auto;
+	left:0
+}
+.country-select.inside .selected-flag{
+	width:70px
+}
+.country-select.inside .flag-dropdown:hover{
+	cursor:pointer
+}
+.country-select.inside .flag-dropdown:hover .selected-flag{
+	background-color:rgba(0, 0, 0, 0.05)
+}
+.country-select.inside input[disabled] + .flag-dropdown:hover,
+.country-select.inside input[readonly] + .flag-dropdown:hover{
+	cursor:default
+}
+.country-select.inside input[disabled] + .flag-dropdown:hover .selected-flag,
+.country-select.inside input[readonly] + .flag-dropdown:hover .selected-flag{
+	background-color:transparent
+}
+.country-select .flag{
+	width:40px;
+	height:30px;
+	-webkit-box-shadow:0px 0px 1px 0px #888;
+	box-shadow:0px 0px 1px 0px #888;
+	background-image:url("../../images/flags2x.png");
+	background-repeat:no-repeat;
+	background-color:#dbdbdb;
+	background-position:20px 0
+}
+/*@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx){
+	.country-select .flag{
+		background-image:url("../../images/flags2x.png")
+	}
+}*/
+.country-select .flag{
+	width: calc(20px * 2);
+}
+.country-select .flag.be{
+	width: calc(18px * 2);
+}
+.country-select .flag.ch{
+	width: calc(15px * 2);
+}
+.country-select .flag.mc{
+	width: calc(19px * 2);
+}
+.country-select .flag.ne{
+	width: calc(18px * 2);
+}
+.country-select .flag.np{
+	width: calc(13px * 2);
+}
+.country-select .flag.va{
+	width: calc(15px * 2);
+}
+/*@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx){
+	.country-select .flag{
+		background-size:5630px 15px
+	}
+}*/
+.country-select .flag.ac{
+	height: calc(10px * 2);
+	background-position:0px 0px
+}
+.country-select .flag.ad{
+	height: calc(14px * 2);
+	background-position: calc(-22px * 2) 0px
+}
+.country-select .flag.ae{
+	height: calc(10px * 2);
+	background-position: calc(-44px * 2) 0px
+}
+.country-select .flag.af{
+	height: calc(14px * 2);
+	background-position: calc(-66px * 2) 0px
+}
+.country-select .flag.ag{
+	height: calc(14px * 2);
+	background-position: calc(-88px * 2) 0px
+}
+.country-select .flag.ai{
+	height: calc(10px * 2);
+	background-position: calc(-110px * 2) 0px
+}
+.country-select .flag.al{
+	height: calc(15px * 2);
+	background-position: calc(-132px * 2) 0px
+}
+.country-select .flag.am{
+	height: calc(10px * 2);
+	background-position: calc(-154px * 2) 0px
+}
+.country-select .flag.ao{
+	height: calc(14px * 2);
+	background-position: calc(-176px * 2) 0px
+}
+.country-select .flag.aq{
+	height: calc(14px * 2);
+	background-position: calc(-198px * 2) 0px
+}
+.country-select .flag.ar{
+	height: calc(13px * 2);
+	background-position: calc(-220px * 2) 0px
+}
+.country-select .flag.as{
+	height: calc(10px * 2);
+	background-position: calc(-242px * 2) 0px
+}
+.country-select .flag.at{
+	height: calc(14px * 2);
+	background-position: calc(-264px * 2) 0px
+}
+.country-select .flag.au{
+	height: calc(10px * 2);
+	background-position: calc(-286px * 2) 0px
+}
+.country-select .flag.aw{
+	height: calc(14px * 2);
+	background-position: calc(-308px * 2) 0px
+}
+.country-select .flag.ax{
+	height: calc(13px * 2);
+	background-position: calc(-330px * 2) 0px
+}
+.country-select .flag.az{
+	height: calc(10px * 2);
+	background-position: calc(-352px * 2) 0px
+}
+.country-select .flag.ba{
+	height: calc(10px * 2);
+	background-position: calc(-374px * 2) 0px
+}
+.country-select .flag.bb{
+	height: calc(14px * 2);
+	background-position: calc(-396px * 2) 0px
+}
+.country-select .flag.bd{
+	height: calc(12px * 2);
+	background-position: calc(-418px * 2) 0px
+}
+.country-select .flag.be{
+	height: calc(15px * 2);
+	background-position: calc(-440px * 2) 0px
+}
+.country-select .flag.bf{
+	height: calc(14px * 2);
+	background-position: calc(-460px * 2) 0px
+}
+.country-select .flag.bg{
+	height: calc(12px * 2);
+	background-position: calc(-482px * 2) 0px
+}
+.country-select .flag.bh{
+	height: calc(12px * 2);
+	background-position: calc(-504px * 2) 0px
+}
+.country-select .flag.bi{
+	height: calc(12px * 2);
+	background-position: calc(-526px * 2) 0px
+}
+.country-select .flag.bj{
+	height: calc(14px * 2);
+	background-position: calc(-548px * 2) 0px
+}
+.country-select .flag.bl{
+	height: calc(14px * 2);
+	background-position: calc(-570px * 2) 0px
+}
+.country-select .flag.bm{
+	height: calc(10px * 2);
+	background-position: calc(-592px * 2) 0px
+}
+.country-select .flag.bn{
+	height: calc(10px * 2);
+	background-position: calc(-614px * 2) 0px
+}
+.country-select .flag.bo{
+	height: calc(14px * 2);
+	background-position: calc(-636px * 2) 0px
+}
+.country-select .flag.bq{
+	height: calc(14px * 2);
+	background-position: calc(-658px * 2) 0px
+}
+.country-select .flag.br{
+	height: calc(14px * 2);
+	background-position: calc(-680px * 2) 0px
+}
+.country-select .flag.bs{
+	height: calc(10px * 2);
+	background-position: calc(-702px * 2) 0px
+}
+.country-select .flag.bt{
+	height: calc(14px * 2);
+	background-position: calc(-724px * 2) 0px
+}
+.country-select .flag.bv{
+	height: calc(15px * 2);
+	background-position: calc(-746px * 2) 0px
+}
+.country-select .flag.bw{
+	height: calc(14px * 2);
+	background-position: calc(-768px * 2) 0px
+}
+.country-select .flag.by{
+	height: calc(10px * 2);
+	background-position: calc(-790px * 2) 0px
+}
+.country-select .flag.bz{
+	height: calc(14px * 2);
+	background-position: calc(-812px * 2) 0px
+}
+.country-select .flag.ca{
+	height: calc(10px * 2);
+	background-position: calc(-834px * 2) 0px
+}
+.country-select .flag.cc{
+	height: calc(10px * 2);
+	background-position: calc(-856px * 2) 0px
+}
+.country-select .flag.cd{
+	height: calc(15px * 2);
+	background-position: calc(-878px * 2) 0px
+}
+.country-select .flag.cf{
+	height: calc(14px * 2);
+	background-position: calc(-900px * 2) 0px
+}
+.country-select .flag.cg{
+	height: calc(14px * 2);
+	background-position: calc(-922px * 2) 0px
+}
+.country-select .flag.ch{
+	height: calc(15px * 2);
+	background-position: calc(-944px * 2) 0px
+}
+.country-select .flag.ci{
+	height: calc(14px * 2);
+	background-position: calc(-961px * 2) 0px
+}
+.country-select .flag.ck{
+	height: calc(10px * 2);
+	background-position: calc(-983px * 2) 0px
+}
+.country-select .flag.cl{
+	height: calc(14px * 2);
+	background-position: calc(-1005px * 2) 0px
+}
+.country-select .flag.cm{
+	height: calc(14px * 2);
+	background-position: calc(-1027px * 2) 0px
+}
+.country-select .flag.cn{
+	height: calc(14px * 2);
+	background-position: calc(-1049px * 2) 0px
+}
+.country-select .flag.co{
+	height: calc(14px * 2);
+	background-position: calc(-1071px * 2) 0px
+}
+.country-select .flag.cp{
+	height: calc(14px * 2);
+	background-position: calc(-1093px * 2) 0px
+}
+.country-select .flag.cr{
+	height: calc(12px * 2);
+	background-position: calc(-1115px * 2) 0px
+}
+.country-select .flag.cu{
+	height: calc(10px * 2);
+	background-position: calc(-1137px * 2) 0px
+}
+.country-select .flag.cv{
+	height: calc(12px * 2);
+	background-position: calc(-1159px * 2) 0px
+}
+.country-select .flag.cw{
+	height: calc(14px * 2);
+	background-position: calc(-1181px * 2) 0px
+}
+.country-select .flag.cx{
+	height: calc(10px * 2);
+	background-position: calc(-1203px * 2) 0px
+}
+.country-select .flag.cy{
+	height: calc(13px * 2);
+	background-position: calc(-1225px * 2) 0px
+}
+.country-select .flag.cz{
+	height: calc(14px * 2);
+	background-position: calc(-1247px * 2) 0px
+}
+.country-select .flag.de{
+	height: calc(12px * 2);
+	background-position: calc(-1269px * 2) 0px
+}
+.country-select .flag.dg{
+	height: calc(10px * 2);
+	background-position: calc(-1291px * 2) 0px
+}
+.country-select .flag.dj{
+	height: calc(14px * 2);
+	background-position: calc(-1313px * 2) 0px
+}
+.country-select .flag.dk{
+	height: calc(15px * 2);
+	background-position: calc(-1335px * 2) 0px
+}
+.country-select .flag.dm{
+	height: calc(10px * 2);
+	background-position: calc(-1357px * 2) 0px
+}
+.country-select .flag.do{
+	height: calc(13px * 2);
+	background-position: calc(-1379px * 2) 0px
+}
+.country-select .flag.dz{
+	height: calc(14px * 2);
+	background-position: calc(-1401px * 2) 0px
+}
+.country-select .flag.ea{
+	height: calc(14px * 2);
+	background-position: calc(-1423px * 2) 0px
+}
+.country-select .flag.ec{
+	height: calc(14px * 2);
+	background-position: calc(-1445px * 2) 0px
+}
+.country-select .flag.ee{
+	height: calc(13px * 2);
+	background-position: calc(-1467px * 2) 0px
+}
+.country-select .flag.eg{
+	height: calc(14px * 2);
+	background-position: calc(-1489px * 2) 0px
+}
+.country-select .flag.eh{
+	height: calc(10px * 2);
+	background-position: calc(-1511px * 2) 0px
+}
+.country-select .flag.er{
+	height: calc(10px * 2);
+	background-position: calc(-1533px * 2) 0px
+}
+.country-select .flag.es{
+	height: calc(14px * 2);
+	background-position: calc(-1555px * 2) 0px
+}
+.country-select .flag.et{
+	height: calc(10px * 2);
+	background-position: calc(-1577px * 2) 0px
+}
+.country-select .flag.eu{
+	height: calc(14px * 2);
+	background-position: calc(-1599px * 2) 0px
+}
+.country-select .flag.fi{
+	height: calc(12px * 2);
+	background-position: calc(-1621px * 2) 0px
+}
+.country-select .flag.fj{
+	height: calc(10px * 2);
+	background-position: calc(-1643px * 2) 0px
+}
+.country-select .flag.fk{
+	height: calc(10px * 2);
+	background-position: calc(-1665px * 2) 0px
+}
+.country-select .flag.fm{
+	height: calc(11px * 2);
+	background-position: calc(-1687px * 2) 0px
+}
+.country-select .flag.fo{
+	height: calc(15px * 2);
+	background-position: calc(-1709px * 2) 0px
+}
+.country-select .flag.fr{
+	height: calc(14px * 2);
+	background-position: calc(-1731px * 2) 0px
+}
+.country-select .flag.ga{
+	height: calc(15px * 2);
+	background-position: calc(-1753px * 2) 0px
+}
+.country-select .flag.gb{
+	height:10px;
+	height: calc(14px * 2);
+	background-position: calc(-1775px * 2) 0px
+}
+.country-select .flag.gd{
+	height: calc(12px * 2);
+	background-position: calc(-1797px * 2) 0px
+}
+.country-select .flag.ge{
+	height: calc(14px * 2);
+	background-position: calc(-1819px * 2) 0px
+}
+.country-select .flag.gf{
+	height: calc(14px * 2);
+	background-position: calc(-1841px * 2) 0px
+}
+.country-select .flag.gg{
+	height: calc(14px * 2);
+	background-position: calc(-1863px * 2) 0px
+}
+.country-select .flag.gh{
+	height: calc(14px * 2);
+	background-position: calc(-1885px * 2) 0px
+}
+.country-select .flag.gi{
+	height: calc(10px * 2);
+	background-position: calc(-1907px * 2) 0px
+}
+.country-select .flag.gl{
+	height: calc(14px * 2);
+	background-position: calc(-1929px * 2) 0px
+}
+.country-select .flag.gm{
+	height: calc(14px * 2);
+	background-position: calc(-1951px * 2) 0px
+}
+.country-select .flag.gn{
+	height: calc(14px * 2);
+	background-position: calc(-1973px * 2) 0px
+}
+.country-select .flag.gp{
+	height: calc(14px * 2);
+	background-position: calc(-1995px * 2) 0px
+}
+.country-select .flag.gq{
+	height: calc(14px * 2);
+	background-position: calc(-2017px * 2) 0px
+}
+.country-select .flag.gr{
+	height: calc(14px * 2);
+	background-position: calc(-2039px * 2) 0px
+}
+.country-select .flag.gs{
+	height: calc(10px * 2);
+	background-position: calc(-2061px * 2) 0px
+}
+.country-select .flag.gt{
+	height: calc(13px * 2);
+	background-position: calc(-2083px * 2) 0px
+}
+.country-select .flag.gu{
+	height: calc(11px * 2);
+	background-position: calc(-2105px * 2) 0px
+}
+.country-select .flag.gw{
+	height: calc(10px * 2);
+	background-position: calc(-2127px * 2) 0px
+}
+.country-select .flag.gy{
+	height: calc(12px * 2);
+	background-position: calc(-2149px * 2) 0px
+}
+.country-select .flag.hk{
+	height: calc(14px * 2);
+	background-position: calc(-2171px * 2) 0px
+}
+.country-select .flag.hm{
+	height: calc(10px * 2);
+	background-position: calc(-2193px * 2) 0px
+}
+.country-select .flag.hn{
+	height: calc(10px * 2);
+	background-position: calc(-2215px * 2) 0px
+}
+.country-select .flag.hr{
+	height: calc(10px * 2);
+	background-position: calc(-2237px * 2) 0px
+}
+.country-select .flag.ht{
+	height:12px;
+	height: calc(14px * 2);
+	background-position: calc(-2259px * 2) 0px
+}
+.country-select .flag.hu{
+	height: calc(10px * 2);
+	background-position: calc(-2281px * 2) 0px
+}
+.country-select .flag.ic{
+	height: calc(14px * 2);
+	background-position: calc(-2303px * 2) 0px
+}
+.country-select .flag.id{
+	height: calc(14px * 2);
+	background-position: calc(-2325px * 2) 0px
+}
+.country-select .flag.ie{
+	height: calc(10px * 2);
+	background-position: calc(-2347px * 2) 0px
+}
+.country-select .flag.il{
+	height: calc(15px * 2);
+	background-position: calc(-2369px * 2) 0px
+}
+.country-select .flag.im{
+	height: calc(10px * 2);
+	background-position: calc(-2391px * 2) 0px
+}
+.country-select .flag.in{
+	height: calc(14px * 2);
+	background-position: calc(-2413px * 2) 0px
+}
+.country-select .flag.io{
+	height: calc(10px * 2);
+	background-position: calc(-2435px * 2) 0px
+}
+.country-select .flag.iq{
+	height: calc(14px * 2);
+	background-position: calc(-2457px * 2) 0px
+}
+.country-select .flag.ir{
+	height: calc(12px * 2);
+	background-position: calc(-2479px * 2) 0px
+}
+.country-select .flag.is{
+	height: calc(15px * 2);
+	background-position: calc(-2501px * 2) 0px
+}
+.country-select .flag.it{
+	height: calc(14px * 2);
+	background-position: calc(-2523px * 2) 0px
+}
+.country-select .flag.je{
+	height: calc(12px * 2);
+	background-position: calc(-2545px * 2) 0px
+}
+.country-select .flag.jm{
+	height: calc(10px * 2);
+	background-position: calc(-2567px * 2) 0px
+}
+.country-select .flag.jo{
+	height: calc(10px * 2);
+	background-position: calc(-2589px * 2) 0px
+}
+.country-select .flag.jp{
+	height: calc(14px * 2);
+	background-position: calc(-2611px * 2) 0px
+}
+.country-select .flag.ke{
+	height: calc(14px * 2);
+	background-position: calc(-2633px * 2) 0px
+}
+.country-select .flag.kg{
+	height: calc(12px * 2);
+	background-position: calc(-2655px * 2) 0px
+}
+.country-select .flag.kh{
+	height: calc(13px * 2);
+	background-position: calc(-2677px * 2) 0px
+}
+.country-select .flag.ki{
+	height: calc(10px * 2);
+	background-position: calc(-2699px * 2) 0px
+}
+.country-select .flag.km{
+	height: calc(12px * 2);
+	background-position: calc(-2721px * 2) 0px
+}
+.country-select .flag.kn{
+	height: calc(14px * 2);
+	background-position: calc(-2743px * 2) 0px
+}
+.country-select .flag.kp{
+	height: calc(10px * 2);
+	background-position: calc(-2765px * 2) 0px
+}
+.country-select .flag.kr{
+	height: calc(14px * 2);
+	background-position: calc(-2787px * 2) 0px
+}
+.country-select .flag.kw{
+	height: calc(10px * 2);
+	background-position: calc(-2809px * 2) 0px
+}
+.country-select .flag.ky{
+	height: calc(10px * 2);
+	background-position: calc(-2831px * 2) 0px
+}
+.country-select .flag.kz{
+	height: calc(10px * 2);
+	background-position: calc(-2853px * 2) 0px
+}
+.country-select .flag.la{
+	height: calc(14px * 2);
+	background-position: calc(-2875px * 2) 0px
+}
+.country-select .flag.lb{
+	height: calc(14px * 2);
+	background-position: calc(-2897px * 2) 0px
+}
+.country-select .flag.lc{
+	height: calc(10px * 2);
+	background-position: calc(-2919px * 2) 0px
+}
+.country-select .flag.li{
+	height: calc(12px * 2);
+	background-position: calc(-2941px * 2) 0px
+}
+.country-select .flag.lk{
+	height: calc(10px * 2);
+	background-position: calc(-2963px * 2) 0px
+}
+.country-select .flag.lr{
+	height: calc(11px * 2);
+	background-position: calc(-2985px * 2) 0px
+}
+.country-select .flag.ls{
+	height: calc(14px * 2);
+	background-position: calc(-3007px * 2) 0px
+}
+.country-select .flag.lt{
+	height: calc(12px * 2);
+	background-position: calc(-3029px * 2) 0px
+}
+.country-select .flag.lu{
+	height: calc(12px * 2);
+	background-position: calc(-3051px * 2) 0px
+}
+.country-select .flag.lv{
+	height: calc(10px * 2);
+	background-position: calc(-3073px * 2) 0px
+}
+.country-select .flag.ly{
+	height: calc(10px * 2);
+	background-position: calc(-3095px * 2) 0px
+}
+.country-select .flag.ma{
+	height: calc(14px * 2);
+	background-position: calc(-3117px * 2) 0px
+}
+.country-select .flag.mc{
+	height: calc(15px * 2);
+	background-position: calc(-3139px * 2) 0px
+}
+.country-select .flag.md{
+	height: calc(10px * 2);
+	background-position: calc(-3160px * 2) 0px
+}
+.country-select .flag.me{
+	height: calc(10px * 2);
+	background-position: calc(-3182px * 2) 0px
+}
+.country-select .flag.mf{
+	height: calc(14px * 2);
+	background-position: calc(-3204px * 2) 0px
+}
+.country-select .flag.mg{
+	height: calc(14px * 2);
+	background-position: calc(-3226px * 2) 0px
+}
+.country-select .flag.mh{
+	height: calc(11px * 2);
+	background-position: calc(-3248px * 2) 0px
+}
+.country-select .flag.mk{
+	height: calc(10px * 2);
+	background-position: calc(-3270px * 2) 0px
+}
+.country-select .flag.ml{
+	height: calc(14px * 2);
+	background-position: calc(-3292px * 2) 0px
+}
+.country-select .flag.mm{
+	height: calc(14px * 2);
+	background-position: calc(-3314px * 2) 0px
+}
+.country-select .flag.mn{
+	height: calc(10px * 2);
+	background-position: calc(-3336px * 2) 0px
+}
+.country-select .flag.mo{
+	height: calc(14px * 2);
+	background-position: calc(-3358px * 2) 0px
+}
+.country-select .flag.mp{
+	height: calc(10px * 2);
+	background-position: calc(-3380px * 2) 0px
+}
+.country-select .flag.mq{
+	height: calc(14px * 2);
+	background-position: calc(-3402px * 2) 0px
+}
+.country-select .flag.mr{
+	height: calc(14px * 2);
+	background-position: calc(-3424px * 2) 0px
+}
+.country-select .flag.ms{
+	height: calc(10px * 2);
+	background-position: calc(-3446px * 2) 0px
+}
+.country-select .flag.mt{
+	height: calc(14px * 2);
+	background-position: calc(-3468px * 2) 0px
+}
+.country-select .flag.mu{
+	height: calc(14px * 2);
+	background-position: calc(-3490px * 2) 0px
+}
+.country-select .flag.mv{
+	height: calc(14px * 2);
+	background-position: calc(-3512px * 2) 0px
+}
+.country-select .flag.mw{
+	height: calc(14px * 2);
+	background-position: calc(-3534px * 2) 0px
+}
+.country-select .flag.mx{
+	height: calc(12px * 2);
+	background-position: calc(-3556px * 2) 0px
+}
+.country-select .flag.my{
+	height: calc(10px * 2);
+	background-position: calc(-3578px * 2) 0px
+}
+.country-select .flag.mz{
+	height: calc(14px * 2);
+	background-position: calc(-3600px * 2) 0px
+}
+.country-select .flag.na{
+	height: calc(14px * 2);
+	background-position: calc(-3622px * 2) 0px
+}
+.country-select .flag.nc{
+	height: calc(10px * 2);
+	background-position: calc(-3644px * 2) 0px
+}
+.country-select .flag.ne{
+	height: calc(15px * 2);
+	background-position: calc(-3666px * 2) 0px
+}
+.country-select .flag.nf{
+	height: calc(10px * 2);
+	background-position: calc(-3686px * 2) 0px
+}
+.country-select .flag.ng{
+	height: calc(10px * 2);
+	background-position: calc(-3708px * 2) 0px
+}
+.country-select .flag.ni{
+	height: calc(12px * 2);
+	background-position: calc(-3730px * 2) 0px
+}
+.country-select .flag.nl{
+	height: calc(14px * 2);
+	background-position: calc(-3752px * 2) 0px
+}
+.country-select .flag.no{
+	height: calc(15px * 2);
+	background-position: calc(-3774px * 2) 0px
+}
+.country-select .flag.np{
+	height: calc(15px * 2);
+	background-position: calc(-3796px * 2) 0px
+	background-color:transparent
+}
+.country-select .flag.nr{
+	height: calc(10px * 2);
+	background-position: calc(-3811px * 2) 0px
+}
+.country-select .flag.nu{
+	height: calc(10px * 2);
+	background-position: calc(-3833px * 2) 0px
+}
+.country-select .flag.nz{
+	height: calc(10px * 2);
+	background-position: calc(-3855px * 2) 0px
+}
+.country-select .flag.om{
+	height: calc(10px * 2);
+	background-position: calc(-3877px * 2) 0px
+}
+.country-select .flag.pa{
+	height: calc(14px * 2);
+	background-position: calc(-3899px * 2) 0px
+}
+.country-select .flag.pe{
+	height: calc(14px * 2);
+	background-position: calc(-3921px * 2) 0px
+}
+.country-select .flag.pf{
+	height: calc(14px * 2);
+	background-position: calc(-3943px * 2) 0px
+}
+.country-select .flag.pg{
+	height: calc(15px * 2);
+	background-position: calc(-3965px * 2) 0px
+}
+.country-select .flag.ph{
+	height: calc(10px * 2);
+	background-position: calc(-3987px * 2) 0px
+}
+.country-select .flag.pk{
+	height: calc(14px * 2);
+	background-position: calc(-4009px * 2) 0px
+}
+.country-select .flag.pl{
+	height: calc(13px * 2);
+	background-position: calc(-4031px * 2) 0px
+}
+.country-select .flag.pm{
+	height: calc(14px * 2);
+	background-position: calc(-4053px * 2) 0px
+}
+.country-select .flag.pn{
+	height: calc(10px * 2);
+	background-position: calc(-4075px * 2) 0px
+}
+.country-select .flag.pr{
+	height: calc(14px * 2);
+	background-position: calc(-4097px * 2) 0px
+}
+.country-select .flag.ps{
+	height: calc(10px * 2);
+	background-position: calc(-4119px * 2) 0px
+}
+.country-select .flag.pt{
+	height: calc(14px * 2);
+	background-position: calc(-4141px * 2) 0px
+}
+.country-select .flag.pw{
+	height: calc(13px * 2);
+	background-position: calc(-4163px * 2) 0px
+}
+.country-select .flag.py{
+	height: calc(11px * 2);
+	background-position: calc(-4185px * 2) 0px
+}
+.country-select .flag.qa{
+	height: calc(8px * 2);	
+	background-position: calc(-4207px * 2) 0px
+}
+.country-select .flag.re{
+	height: calc(14px * 2);
+	background-position: calc(-4229px * 2) 0px
+}
+.country-select .flag.ro{
+	height: calc(14px * 2);
+	background-position: calc(-4251px * 2) 0px
+}
+.country-select .flag.rs{
+	height: calc(14px * 2);
+	background-position: calc(-4273px * 2) 0px
+}
+.country-select .flag.ru{
+	height: calc(14px * 2);
+	background-position: calc(-4295px * 2) 0px
+}
+.country-select .flag.rw{
+	height: calc(14px * 2);
+	background-position: calc(-4317px * 2) 0px
+}
+.country-select .flag.sa{
+	height: calc(14px * 2);
+	background-position: calc(-4339px * 2) 0px
+}
+.country-select .flag.sb{
+	height: calc(10px * 2);
+	background-position: calc(-4361px * 2) 0px
+}
+.country-select .flag.sc{
+	height: calc(10px * 2);
+	background-position: calc(-4383px * 2) 0px
+}
+.country-select .flag.sd{
+	height: calc(10px * 2);
+	background-position: calc(-4405px * 2) 0px
+}
+.country-select .flag.se{
+	height: calc(13px * 2);
+	background-position: calc(-4427px * 2) 0px
+}
+.country-select .flag.sg{
+	height: calc(14px * 2);
+	background-position: calc(-4449px * 2) 0px
+}
+.country-select .flag.sh{
+	height: calc(10px * 2);
+	background-position: calc(-4471px * 2) 0px
+}
+.country-select .flag.si{
+	height: calc(10px * 2);
+	background-position: calc(-4493px * 2) 0px
+}
+.country-select .flag.sj{
+	height: calc(15px * 2);
+	background-position: calc(-4515px * 2) 0px
+}
+.country-select .flag.sk{
+	height: calc(14px * 2);
+	background-position: calc(-4537px * 2) 0px
+}
+.country-select .flag.sl{
+	height: calc(14px * 2);
+	background-position: calc(-4559px * 2) 0px
+}
+.country-select .flag.sm{
+	height: calc(15px * 2);
+	background-position: calc(-4581px * 2) 0px
+}
+.country-select .flag.sn{
+	height: calc(14px * 2);
+	background-position: calc(-4603px * 2) 0px
+}
+.country-select .flag.so{
+	height: calc(14px * 2);
+	background-position: calc(-4625px * 2) 0px
+}
+.country-select .flag.sr{
+	height: calc(14px * 2);
+	background-position: calc(-4647px * 2) 0px
+}
+.country-select .flag.ss{
+	height: calc(10px * 2);
+	background-position: calc(-4669px * 2) 0px
+}
+.country-select .flag.st{
+	height: calc(10px * 2);
+	background-position: calc(-4691px * 2) 0px
+}
+.country-select .flag.sv{
+	height: calc(12px * 2);
+	background-position: calc(-4713px * 2) 0px
+}
+.country-select .flag.sx{
+	height: calc(14px * 2);
+	background-position: calc(-4735px * 2) 0px
+}
+.country-select .flag.sy{
+	height: calc(14px * 2);
+	background-position: calc(-4757px * 2) 0px
+}
+.country-select .flag.sz{
+	height: calc(14px * 2);
+	background-position: calc(-4779px * 2) 0px
+}
+.country-select .flag.ta{
+	height: calc(10px * 2);
+	background-position: calc(-4801px * 2) 0px
+}
+.country-select .flag.tc{
+	height: calc(10px * 2);
+	background-position: calc(-4823px * 2) 0px
+}
+.country-select .flag.td{
+	height: calc(14px * 2);
+	background-position: calc(-4845px * 2) 0px
+}
+.country-select .flag.tf{
+	height: calc(14px * 2);
+	background-position: calc(-4867px * 2) 0px
+}
+.country-select .flag.tg{
+	height: calc(13px * 2);
+	background-position: calc(-4889px * 2) 0px
+}
+.country-select .flag.th{
+	height: calc(14px * 2);
+	background-position: calc(-4911px * 2) 0px
+}
+.country-select .flag.tj{
+	height: calc(10px * 2);
+	background-position: calc(-4933px * 2) 0px
+}
+.country-select .flag.tk{
+	height: calc(10px * 2);
+	background-position: calc(-4955px * 2) 0px
+}
+.country-select .flag.tl{
+	height: calc(10px * 2);
+	background-position: calc(-4977px * 2) 0px
+}
+.country-select .flag.tm{
+	height: calc(14px * 2);
+	background-position: calc(-4999px * 2) 0px
+}
+.country-select .flag.tn{
+	height: calc(14px * 2);
+	background-position: calc(-5021px * 2) 0px
+}
+.country-select .flag.to{
+	height: calc(10px * 2);
+	background-position: calc(-5043px * 2) 0px
+}
+.country-select .flag.tr{
+	height: calc(14px * 2);
+	background-position: calc(-5065px * 2) 0px
+}
+.country-select .flag.tt{
+	height: calc(12px * 2);
+	background-position: calc(-5087px * 2) 0px
+}
+.country-select .flag.tv{
+	height: calc(10px * 2);
+	background-position: calc(-5109px * 2) 0px
+}
+.country-select .flag.tw{
+	height: calc(14px * 2);
+	background-position: calc(-5131px * 2) 0px
+}
+.country-select .flag.tz{
+	height: calc(14px * 2);
+	background-position: calc(-5153px * 2) 0px
+}
+.country-select .flag.ua{
+	height: calc(14px * 2);
+	background-position: calc(-5175px * 2) 0px
+}
+.country-select .flag.ug{
+	height:14px;
+	height: calc(14px * 2);
+	background-position: calc(-5197px * 2) 0px
+}
+.country-select .flag.um{
+	height: calc(11px * 2);
+	background-position: calc(-5219px * 2) 0px
+}
+.country-select .flag.us{
+	height: calc(11px * 2);
+	background-position: calc(-5241px * 2) 0px
+}
+.country-select .flag.uy{
+	height: calc(14px * 2);
+	background-position: calc(-5263px * 2) 0px
+}
+.country-select .flag.uz{
+	height: calc(10px * 2);
+	background-position: calc(-5285px * 2) 0px
+}
+.country-select .flag.va{
+	height: calc(15px * 2);
+	background-position: calc(-5307px * 2) 0px
+}
+.country-select .flag.vc{
+	height: calc(14px * 2);
+	background-position: calc(-5324px * 2) 0px
+}
+.country-select .flag.ve{
+	height: calc(14px * 2);
+	background-position: calc(-5346px * 2) 0px
+}
+.country-select .flag.vg{
+	height: calc(10px * 2);
+	background-position: calc(-5368px * 2) 0px
+}
+.country-select .flag.vi{
+	height: calc(14px * 2);
+	background-position: calc(-5390px * 2) 0px
+}
+.country-select .flag.vn{
+	height: calc(14px * 2);
+	background-position: calc(-5412px * 2) 0px
+}
+.country-select .flag.vu{
+	height: calc(12px * 2);
+	background-position: calc(-5434px * 2) 0px
+}
+.country-select .flag.wf{
+	height: calc(14px * 2);
+	background-position: calc(-5456px * 2) 0px
+}
+.country-select .flag.ws{
+	height: calc(10px * 2);
+	background-position: calc(-5478px * 2) 0px
+}
+.country-select .flag.xk{
+	height: calc(15px * 2);
+	background-position: calc(-5500px * 2) 0px
+}
+.country-select .flag.ye{
+	height: calc(14px * 2);
+	background-position: calc(-5522px * 2) 0px
+}
+.country-select .flag.yt{
+	height: calc(14px * 2);
+	background-position: calc(-5544px * 2) 0px
+}
+.country-select .flag.za{
+	height: calc(14px * 2);
+	background-position: calc(-5566px * 2) 0px
+}
+.country-select .flag.zm{
+	height: calc(14px * 2);
+	background-position: calc(-5588px * 2) 0px
+}
+.country-select .flag.zw{
+	height: calc(10px * 2);
+	background-position: calc(-5610px * 2) 0px
+}
